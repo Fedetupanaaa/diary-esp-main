@@ -8,9 +8,22 @@
   >
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="../static/css/style.css">
-  <title>El diario del programador</title>
+  <title>El diario...</title>
 </head>
 <body>
+   
+  <button id="secretBtn" style="
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    opacity: 0;  /* Invisible */
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  ">🎮</button>
+
   <header class="header">
     <img src="../static/img/logo.svg" alt="logo" width="30" height="30">
     <ul class="main-list">
@@ -21,8 +34,11 @@
   </header>
   <main>
     {% block content %}
-    <h1 class="main__title">Mis entradas</h1>
+    <h1 class="main__title">Mis Diarios</h1>
     <ul class="cards-list">
+    
+      
+
       {% for el in cards%}
       <li class="card">
         <a class="card__link" href="/card/{{el.id}}">
@@ -31,6 +47,7 @@
             <h2 class="card__title">{{el.title}}</h2>
             <p class="card__subtitle">{{el.subtitle}}</p>
           </div>
+        
         </a>
       </li>
       {% endfor %}
